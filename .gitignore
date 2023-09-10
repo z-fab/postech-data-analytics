@@ -210,4 +210,7 @@ pyrightconfig.json
 pyvenv.cfg
 pip-selfcheck.json
 
+### Custom
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks,virtualenv,data
