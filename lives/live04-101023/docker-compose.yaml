@@ -1,0 +1,6 @@
+version: '3'
+services:
+  streamlit:
+    build: .
+    ports:
+      - "8511:8501"
