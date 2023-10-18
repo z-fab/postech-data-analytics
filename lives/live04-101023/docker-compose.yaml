@@ -1,6 +1,16 @@
 version: '3'
 services:
-  streamlit:
-    build: .
-    ports:
-      - "8511:8501"
+    streamlit:
+        build: .
+        ports:
+            - 8501
+        networks:
+            - traefik
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.streamlit.rule=Host(`postech.zfab.me`) && Pathprefix(`/st-live`)"
+            - "traefik.http.services.streamlit.loadBalancer.server.port=8501"
+
+networks:
+    traefik:
+        external: true
