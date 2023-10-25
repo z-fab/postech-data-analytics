@@ -67,18 +67,15 @@ def table_info(df: pl.DataFrame) -> pl.DataFrame:
 def graph_valor_pais(df: pl.DataFrame, var="value", n=5) -> None:
     cols = st.columns([2, 1], gap="large")
     var = {"Valor Exportado": "value", "Litros Exportados": "liters"}
-    custom_str = {"Valor Exportado": "Valor: ", "Litros Exportados": "Litros: "}
 
     with cols[1]:
         with st.expander("⚙️ Configuração do Gráfico", expanded=True):
             metrica = st.selectbox(
-                "Qual métrica deseja visualizar?",
+                "Métrica",
                 ("Valor Exportado", "Litros Exportados"),
                 key="metrica_temporal",
             )
-            type = st.selectbox(
-                "Visualização deseja ver?", ("Top 3 Países", "Customizar")
-            )
+            type = st.selectbox("Visualização", ("Top 3 Países", "Customizar"))
 
             if type == "Customizar":
                 list_name = (
@@ -90,7 +87,7 @@ def graph_valor_pais(df: pl.DataFrame, var="value", n=5) -> None:
                     .to_series()
                     .to_list()
                 )
-                list_selected = st.multiselect("Paises a serem visualizados", list_name)
+                list_selected = st.multiselect("Paises selecionados", list_name)
 
     with cols[0]:
         df_aux = (
