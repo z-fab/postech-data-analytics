@@ -212,5 +212,6 @@ pip-selfcheck.json
 
 ### Custom
 .DS_Store
+.vscode
 
 # End of https://www.toptal.com/developers/gitignore/api/python,jupyternotebooks,virtualenv,data
