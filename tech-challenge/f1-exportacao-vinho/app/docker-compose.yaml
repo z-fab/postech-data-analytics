@@ -1,0 +1,16 @@
+version: "3"
+services:
+  streamlit-tc-f1:
+    build: .
+    ports:
+      - 8501
+    networks:
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.streamlit-tc-f1.rule=Host(`postech.zfab.me`) && Pathprefix(`/tc-f1`)"
+      - "traefik.http.services.streamlit-tc-f1.loadBalancer.server.port=8501"
+
+networks:
+  traefik:
+    external: true
