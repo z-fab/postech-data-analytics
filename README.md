@@ -1,7 +1,5 @@
 # Postech Data Analytics
 
-Repositório com exercícios e projetos da Pós-Graduação de Data Analytics da FIAP
-
 Este repositório contém exercícios e projetos realizados durante a Pós-Graduação de Data Analytics da FIAP.
 
 ## Projetos
