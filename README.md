@@ -1,4 +1,4 @@
-# postech-data-analytics
+# Postech Data Analytics
 
 Repositório com exercícios e projetos da Pós-Graduação de Data Analytics da FIAP
 
@@ -7,8 +7,6 @@ Este repositório contém exercícios e projetos realizados durante a Pós-Gradu
 ## Projetos
 
 - **Winetech Corp. Exportação de Vinho** -> Criação de Relatório e Dashboard com dados de Exportação de Vinho. [tech-challenge/f1-exportacao-vinho](tech-challenge/f1-exportacao-vinho)
-
----
 
 ## Pastas
 
