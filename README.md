@@ -16,11 +16,11 @@ Os Data Challenge são 'desafios' opcionais sugeridos durante o decorrer do curs
 
 #### Códigos Fase 1 - Data Analysis and Exploration ([f1-data-analysis](/f1-data-analysis))
 
-A pasta `f1-data-analysis` contém todos os códigos e notebooks criados durante os módulos da Fase 1 do curso.
+A pasta `f1-data-analysis` contém todos os códigos e notebooks criados durante os módulos da Fase 1 do curso. O foco da fase 1 é a análise exploratória e visualização dos dados.
 
 #### Códigos Fase 2 - Machine Learning ([f2-machine-learning-avancado](/f2-machine-learning-avancado))
 
-A pasta `f1-data-analysis` contém todos os códigos e notebooks criados durante os módulos da Fase 1 do curso.
+A pasta `f2-machine-learning-avancado` contém todos os códigos e notebooks criados durante os módulos da Fase 2 do curso. O foco da fase 2 é a aplicação de modelos de Machine Learning.
 
 #### Aulas Ao Vivo ([lives](/lives))
 
