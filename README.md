@@ -6,6 +6,8 @@ Este repositório contém exercícios e projetos realizados durante a Pós-Gradu
 
 - **Winetech Corp. Exportação de Vinho** -> Criação de Relatório e Dashboard com dados de Exportação de Vinho. [tech-challenge/f1-exportacao-vinho](tech-challenge/f1-exportacao-vinho)
 
+- **Previsão IBovespa** -> Criação de modelo e Dashboard para previsão do IBovespa. [tech-challenge/f2-previsao-ibovespa](tech-challenge/f1-exportacao-vinho)
+
 ## Pastas
 
 Descrição e acesso rápido ao conteúdo do repositório

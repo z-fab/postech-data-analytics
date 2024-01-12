@@ -8,6 +8,8 @@ Dado a característica estocástica do mercado financeiro, a previsão de fecham
 
 Como meta, o modelo deve ter um **erro médio percentual absoluto (MAPE) menor que 2%** para os próximos 3 dias.
 
+> O Dashboard pode ser acessado em http://postech.zfab.me/tc-f2
+
 ## Metodologia
 
 Os dados serão coletados via API do Yahoo Finance utilizando o pacote `yfinance`. Os dados serão coletados e atualizados em um Banco de Dados Local (SQLite) todos os dias as 06:00.
@@ -81,5 +83,3 @@ O Dashboard foi criado utilizando o Streamlit e pode ser acessado no link abaixo
 http://postech.zfab.me/tc-f2
 
 Existe uma rotina que atualiza diariamente os dados e, quando necessário, realiza a previsão para os próximos 3 dias.
-
-Os códigos do Dashboard estão disponíveis no repositório do projeto em https://github.com/z-fab/postech-data-analytics/tree/master/tech-challenge/f2-previsao-ibovespa
