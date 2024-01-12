@@ -1,6 +1,6 @@
 version: "3"
 services:
-  f2-main:
+  f2-gitmain:
     image: python:3.10-slim
     volumes:
       - ../.:/app
