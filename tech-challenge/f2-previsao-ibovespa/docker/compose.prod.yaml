@@ -1,16 +1,17 @@
 version: "3"
 name: f2
 services:
-  ingestion:
+  main:
     image: python:3.10-slim
     volumes:
       - ../.:/app
     working_dir: /app
-    command: sh -c "pip install -r requirements.txt && python src/ingestion.py"
+    command: sh -c "pip install -r requirements.txt && python src/main.py"
 
   app:
     image: python:3.10-slim
     volumes:
       - ../.:/app
     working_dir: /app
-    command: sh -c "pip install -r requirements.txt && streamlit run src/streamlit.py --server.port=8501 --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false --server.baseUrlPath="
+    command: sh -c "pip install -r requirements.txt && streamlit run src/streamlit.py"
+    #command: sh -c "pip install -r requirements.txt && streamlit run src/streamlit.py --server.port=8501 --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false --server.baseUrlPath="

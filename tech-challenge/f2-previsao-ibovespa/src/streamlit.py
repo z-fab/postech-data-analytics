@@ -21,10 +21,16 @@ st.set_page_config(
 )
 
 struct.header()
-st.divider()
-struct.indicators_ibovespa()
-st.divider()
 
-struct.graph_pred(365, title="IBovespa - Fechado e Previsão")
+tabs = st.tabs(["🔮 Previsão", "📋 O Projeto"])
 
-struct.table_ibovespa()
+with tabs[0]:
+    st.markdown('<br>', unsafe_allow_html=True)
+    struct.indicators_ibovespa()
+    st.divider()
+    struct.graph_pred(365, title="IBovespa - Fechado e Previsão")
+    struct.table_ibovespa()
+
+with tabs[1]:
+    st.markdown('<br>', unsafe_allow_html=True)
+    struct.desc_project()

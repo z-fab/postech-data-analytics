@@ -117,11 +117,11 @@ def table_ibovespa() -> None:
     st.dataframe(df_final[['Pontuação', 'Previsão', 'Diferença (pontos)', 'Diferença (%)']], use_container_width=True)
 
 
-def indicators_ibovespa() -> None:
+def indicators_ibovespa():
 
     last_date = getDataIbov()[1]
 
-    data = getConsolidate(90)
+    data = getConsolidate(30)
     data = data[data['close'] > 0]
 
     mae = round(np.mean(np.abs(data['diff'])))
@@ -130,14 +130,57 @@ def indicators_ibovespa() -> None:
     cols = st.columns(3)
 
     cols[0].metric(
-        label=":gray[Última atualização]", 
+        label=":gray[Última atualização IBovespa]", 
         value=last_date.strftime('%d/%m/%Y')
     )
     cols[1].metric(
-        label=f":green[MAE] (Mean Absolute Error) - Últimos 90 Dias", 
+        label=f":green[MAE] (Mean Absolute Error) - Últimos 30 Dias", 
         value=f"± {mae} pts"
     )
     cols[2].metric(
-        label=f":green[MAPE] (Mean Absolute Percent Error) - Últimos 90 Dias", 
+        label=f":green[MAPE] (Mean Absolute Percent Error) - Últimos 30 Dias", 
         value= f"{mape}%"
     )
+
+def desc_project():
+
+    st.info('Para ver o conteúdo completo e o código do Dashboard acesse o repositório do projeto em https://github.com/z-fab/postech-data-analytics/tree/master/tech-challenge/f2-previsao-ibovespa', icon="ℹ️")
+    st.markdown('<br>', unsafe_allow_html=True)
+
+    content = f'''
+
+        Este projeto faz parte do módulo de Data Analytics da pós-graduação da POSTECH FIAP, visando desenvolver um modelo preditivo para o fechamento diário do índice IBOVESPA.
+
+        O problema fornecido foi: Imagine que você foi escalado para um time de investimentos e precisará realizar um **modelo preditivo** com dados da **IBOVESPA** (Bolsa de valores) para criar uma série temporal e prever diariamente o fechamento da base.
+
+        Dado a característica estocástica do mercado financeiro, a previsão de fechamento da IBOVESPA é um problema _complexo e de difícil solução_, por isso o objetivo será criar um modelo de previsão de fechamento da IBOVESPA apenas para os 3 dias seguintes. A previsão será feita com base nos dados históricos de fechamento.
+
+        Como meta, o modelo deve ter um **erro médio percentual absoluto (MAPE) menor que 2%** para os próximos 3 dias.
+
+        ## Metodologia
+
+        Os dados serão coletados via API do Yahoo Finance utilizando o pacote `yfinance`. Os dados serão coletados e atualizados em um Banco de Dados Local (SQLite) todos os dias as 06:00.
+
+        Em alguns casos a API do Yahoo Finance não retorna os dados do dia anterior, por isso, caso isso ocorra, podemos ter uma defasaem de 1 dia nos dados.
+
+        ## Modelos Testados
+
+        Para a resolução do problema foram testados 3 modelos e comparados com o resultado de um modelo de Baseline (Naive):
+
+        - ARIMA
+        - SARIMA / SARIMAX
+        - XGBoost
+
+        Como baseline foi escolhido o modelo Naive que utiliza uma média móvel de 7 dias para prever os próximos 3 dias.
+
+        ## Conclusão
+
+        O modelo SARIMA treinando com os 180 dias anteriores foi o escolhido. Esse modelo demonstrou um bom resultado (tanto na validação quanto no teste) e por isso criamos o Dashboard e o sistema de predição automática com ele.
+
+        ### Dashboard
+
+        O Dashboard foi criado utilizando o Streamlit. Existe uma rotina que atualiza diariamente os dados e, quando necessário, realiza a previsão para os próximos 3 dias.
+
+    '''
+
+    st.markdown(content, unsafe_allow_html=True)
