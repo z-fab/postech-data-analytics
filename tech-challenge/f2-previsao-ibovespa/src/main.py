@@ -48,7 +48,7 @@ def ingestion():
     last_date = db.getLastDateIbov()
     yesterday = datetime.datetime.now().date() - datetime.timedelta(days=1)
 
-    # Se não houver dados no banco de dados, coletar a partir de 01/01/2023
+    # Se não houver dados no banco de dados, coletar a partir de 01/01/2000
     if last_date is None:
         last_date = datetime.date(2000, 1, 1)
         logger.info(f'Não há dados no banco de dados, coletando a partir de {last_date}')
@@ -86,7 +86,7 @@ def predict():
     
     # Verificando a última data de predição. Caso não haja, iniciar a partir de 01/06/2023
     lastDatePredicted = db.getLastDatePred()
-    lastDatePredicted = lastDatePredicted if lastDatePredicted is not None else datetime.date(2023, 6, 1)
+    lastDatePredicted = lastDatePredicted if lastDatePredicted is not None else datetime.date(2022, 1, 1)
     
     lastDateIbov = db.getLastDateIbov()
 
@@ -99,7 +99,7 @@ def predict():
 
     # Coletando dados do Ibovespa para realizar a predição
     data_ibovespa = db.getDataIbov(
-        start_date=lastDatePredicted - datetime.timedelta(days=90), 
+        start_date=lastDatePredicted - datetime.timedelta(days=180), 
         end_date=lastDatePredicted
     )
 
