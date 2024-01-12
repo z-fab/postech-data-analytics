@@ -1,14 +1,13 @@
 version: "3"
-name: f2
 services:
-  main:
+  f2-main:
     image: python:3.10-slim
     volumes:
       - ../.:/app
     working_dir: /app
     command: sh -c "pip install -r requirements.txt && python src/main.py"
 
-  app:
+  f2-app:
     image: python:3.10-slim
     volumes:
       - ../.:/app
@@ -22,3 +21,7 @@ services:
       - "traefik.http.routers.f2-app.rule=Host(`postech.zfab.me`) && Pathprefix(`/tc-f2`)"
       - "traefik.http.services.f2-app.loadBalancer.server.port=8501"
     command: sh -c "pip install -r requirements.txt && streamlit run src/streamlit.py --server.port=8501 --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false --server.baseUrlPath=tc-f2"
+
+networks:
+  traefik:
+    external: true
