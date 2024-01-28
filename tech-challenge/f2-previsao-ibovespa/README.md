@@ -4,9 +4,9 @@ Este projeto faz parte do módulo de Data Analytics da pós-graduação da POSTE
 
 O problema fornecido foi: Imagine que você foi escalado para um time de investimentos e precisará realizar um **modelo preditivo** com dados da **IBOVESPA** (Bolsa de valores) para criar uma série temporal e prever diariamente o fechamento da base.
 
-Dado a característica estocástica do mercado financeiro, a previsão de fechamento da IBOVESPA é um problema _complexo e de difícil solução_, por isso o objetivo será criar um modelo de previsão de fechamento da IBOVESPA apenas para os 3 dias seguintes. A previsão será feita com base nos dados históricos de fechamento.
+Dado a característica estocástica do mercado financeiro, a previsão de fechamento da IBOVESPA é um problema _complexo e de difícil solução_, por isso o objetivo será criar um modelo de previsão de fechamento da IBOVESPA apenas para o dia seguinte. A previsão será feita com base nos dados históricos de fechamento.
 
-Como meta, o modelo deve ter um **erro médio percentual absoluto (MAPE) menor que 2%** para os próximos 3 dias.
+Como meta, o modelo deve ter um **erro médio percentual absoluto (MAPE) menor que 2%** para o próximo dia.
 
 > O Dashboard pode ser acessado em http://postech.zfab.me/tc-f2
 
@@ -82,4 +82,4 @@ O Dashboard foi criado utilizando o Streamlit e pode ser acessado no link abaixo
 
 http://postech.zfab.me/tc-f2
 
-Existe uma rotina que atualiza diariamente os dados e, quando necessário, realiza a previsão para os próximos 3 dias.
+Existe uma rotina que atualiza diariamente os dados e, quando necessário, realiza a previsão para o próximo dia.
