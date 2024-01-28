@@ -71,7 +71,9 @@ def ingestion():
         last_date = last_date + datetime.timedelta(days=1)
         logger.info("Coletando dados a partir de %s", last_date)
 
-    data_ibovespa = BovespaCollector().get_data(start_date=last_date)
+    data_ibovespa = BovespaCollector().get_data(
+        start_date=last_date, end_date=datetime.datetime.now().date()
+    )
 
     # Se não houver dados para serem salvos no banco de dados, não há necessidade de salvar
     if data_ibovespa is None or len(data_ibovespa) <= 0:
@@ -193,9 +195,8 @@ def main():
 
 if __name__ == "__main__":
     main()
-    schedule.every().day.at("07:00").do(main)
-    schedule.every().day.at("12:00").do(main)
+    # schedule.every(3).hours.do(main)
 
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    # while True:
+    #     schedule.run_pending()
+    #     time.sleep(1)
