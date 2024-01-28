@@ -24,6 +24,10 @@ A pasta `f1-data-analysis` contém todos os códigos e notebooks criados durante
 
 A pasta `f2-machine-learning` contém todos os códigos e notebooks criados durante os módulos da Fase 2 do curso. O foco da fase 2 é a aplicação de modelos de Machine Learning.
 
+#### Códigos Fase 3 - Big Data ([f3-big-data](/f3-big-data))
+
+A pasta `f3-big-data` contém todos os códigos e notebooks criados durante os módulos da Fase 3 do curso. O foco da fase 3 é o uso de ferramentas e frameworks em grandes volumes de dados (Big Data)
+
 #### Aulas Ao Vivo ([lives](/lives))
 
 A pasta `lives` contém todos os códigos e notebooks criados durante as aulas e mentorias ao vivo.
