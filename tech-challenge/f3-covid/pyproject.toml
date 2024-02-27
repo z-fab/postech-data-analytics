@@ -8,10 +8,15 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.12"
 polars = "^0.20.6"
+plotly = "^5.18.0"
+pandas = "^2.2.0"
+seaborn = "^0.13.2"
+matplotlib = "^3.8.2"
+nbformat = "^5.9.2"
 
 
 [tool.poetry.group.dev.dependencies]
-ipykernel = "^6.29.0"
+jupyterlab = "^4.1.1"
 
 [build-system]
 requires = ["poetry-core"]
