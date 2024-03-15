@@ -3,7 +3,7 @@ import { Router } from "./Router";
 
 export function App() {
    return (
-      <BrowserRouter>
+      <BrowserRouter basename="/tc-f3">
          <Router />
       </BrowserRouter>
    );

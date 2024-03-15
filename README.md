@@ -8,6 +8,8 @@ Este repositório contém exercícios e projetos realizados durante a Pós-Gradu
 
 - **Previsão IBovespa** -> Criação de modelo e Dashboard para previsão do IBovespa. [tech-challenge/f2-previsao-ibovespa](tech-challenge/f2-previsao-ibovespa)
 
+- **Análise COVID-19** -> Criação de Relatório e Modelo de Clusterização para análise do comportamento da população durante a pandemia de COVID-19. [tech-challenge/f3-covid](tech-challenge/f3-covid)
+
 ## Pastas
 
 Descrição e acesso rápido ao conteúdo do repositório
