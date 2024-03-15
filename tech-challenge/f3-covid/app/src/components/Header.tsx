@@ -24,6 +24,24 @@ export function Header() {
                os conhecimentos obtidos em todas as disciplinas vistas até
                aquele momento.
             </p>
+            <p className="mt-4 text-zinc-800">
+               Você pode acessar o repositório com Notebooks e o código em{" "}
+               <a
+                  target="_blank"
+                  className="text-green-600 underline underline-offset-4 hover:animate-pulse"
+                  href="https://github.com/z-fab/postech-data-analytics/tree/master/tech-challenge/f3-covid"
+               >
+                  Repositório Github
+               </a>{" "}
+               e me encontrar no linkedin como{" "}
+               <a
+                  target="_blank"
+                  className="text-green-600 underline underline-offset-4 hover:animate-pulse"
+                  href="https://www.linkedin.com/in/fazillig/"
+               >
+                  Fabricio Zillig
+               </a>
+            </p>
 
             <nav className="flex items-start mt-12 -ml-4 border-b pb-3 border-zinc-200">
                <NavigationMenu>
