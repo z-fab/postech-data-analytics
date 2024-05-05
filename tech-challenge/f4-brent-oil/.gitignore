@@ -1,0 +1,5 @@
+nifi/*
+database/*
+!/**/.gitkeep
+poetry.lock
+
