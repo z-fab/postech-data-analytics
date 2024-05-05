@@ -1,0 +1,25 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+ENV TZ="America/Sao_Paulo"
+ENV POETRY_HOME=/opt/poetry
+ENV PATH="$POETRY_HOME/bin:$PATH"
+
+RUN date
+RUN apt-get update && apt-get install -y \
+    curl \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
+
+COPY pyproject.toml poetry.lock* ./
+COPY logs/ ./logs
+
+RUN curl -sSL https://install.python-poetry.org | python -
+RUN poetry config virtualenvs.create false
+RUN poetry install --no-dev
+
+COPY app/ ./
+COPY .env ./
+
+
