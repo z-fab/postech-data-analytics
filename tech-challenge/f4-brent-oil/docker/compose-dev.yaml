@@ -1,5 +1,25 @@
-version: "3.1"
 services:
+
+  tcf4-back:
+    build:
+      context: ../.
+      dockerfile: docker/python-image
+    container_name: tcf4-back-brent-oil
+    networks:
+      - f4-brent-oil
+    command: sh -c "poetry run python main.py"
+
+  tcf4-front:
+    build:
+      context: ../.
+      dockerfile: docker/python-image
+    container_name: tcf4-front-brent-oil
+    ports:
+      - 8501:8501
+    networks:
+      - f4-brent-oil
+    command: sh -c "streamlit run streamlit.py"
+
   db:
     image: postgres:latest
     restart: always
