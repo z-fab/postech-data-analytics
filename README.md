@@ -10,6 +10,8 @@ Este repositório contém exercícios e projetos realizados durante a Pós-Gradu
 
 - **Análise COVID-19** -> Criação de Relatório e Modelo de Clusterização para análise do comportamento da população durante a pandemia de COVID-19. [tech-challenge/f3-covid](tech-challenge/f3-covid)
 
+- **Previsão Petróleo Brent** -> Criação de Análise e Modelo para previsão do valor de fechamento do Petróleo Brent. [tech-challenge/f4-brent-oil](tech-challenge/f4-brent-oil)
+
 ## Pastas
 
 Descrição e acesso rápido ao conteúdo do repositório
@@ -29,6 +31,10 @@ A pasta `f2-machine-learning` contém todos os códigos e notebooks criados dura
 #### Códigos Fase 3 - Big Data ([f3-big-data](/f3-big-data))
 
 A pasta `f3-big-data` contém todos os códigos e notebooks criados durante os módulos da Fase 3 do curso. O foco da fase 3 é o uso de ferramentas e frameworks em grandes volumes de dados (Big Data)
+
+#### Códigos Fase 4 - Deploy ([f4-data-viz-production-models](/f4-data-viz-production-models))
+
+A pasta `f4-data-viz-production-models` contém todos os códigos e notebooks criados durante os módulos da Fase 4 do curso. O foco da fase 4 é a visualização de dados e deploy de modelos.
 
 #### Aulas Ao Vivo ([lives](/lives))
 

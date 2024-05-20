@@ -2,6 +2,7 @@ from services import Database
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
+from datetime import datetime
 
 db = Database()
 
@@ -12,31 +13,33 @@ def get_history_graph():
 
     # Criando o gráfico de linha para a série temporal
     fig = go.Figure()
-    fig.add_trace(go.Scatter(x=df_brent_oil['date'], y=df_brent_oil['close'], mode='lines', name='Preço do Petróleo Brent'))
+    fig.add_trace(go.Scatter(x=df_brent_oil['date'], y=df_brent_oil['close'], mode='lines', line=dict(color='#E4292B'), name='Preço do Petróleo Brent', showlegend=False))
 
     # Adicionando eventos significativos como círculos numerados
     events = {
         '2008-09-15': 'Crise Financeira Global',
         '2011-03-01': 'Primavera Árabe',
-        '2014-11-27': 'OPEP não corta produção, preço cai',
-        '2016-01-01': 'Acordo de Corte da OPEP',
+        '2014-11-20': 'OPEP não corta produção, preço cai',
+        '2016-01-04': 'Acordo de Corte da OPEP',
         '2018-05-08': 'EUA saem do acordo nuclear com Irã',
-        '2020-03-01': 'Pandemia de COVID-19',
-        '2020-04-20': 'Preços do WTI negativos',
+        '2020-03-06': 'Pandemia de COVID-19',
         '2022-02-24': 'Invasão da Ucrânia pela Rússia',
         '2023-02-01': 'Tensões no Oriente Médio'
     }
 
     # Numerar os eventos para colocar dentro dos círculos
     for i, (date, event) in enumerate(events.items(), 1):
-        close_price = df_brent_oil.where(df_brent_oil['date'] == date)['close'].values[0]
-        offset_price = 155  # Ajuste este valor conforme necessário
+        date = datetime.strptime(date, '%Y-%m-%d').date()
+        if date not in df_brent_oil['date'].values:
+            continue
+        close_price = df_brent_oil[df_brent_oil['date'] == date]['close'].values[0]
+        offset_price = 155 
 
         fig.add_trace(go.Scatter(
             x=[date, date],
             y=[close_price, offset_price],
             mode='lines',
-            line=dict(color='blue', dash='dash'),
+            line=dict(color='#AAA', dash='dot'),
             showlegend=False
         ))
 
@@ -45,7 +48,7 @@ def get_history_graph():
             x=[date],
             y=[offset_price],
             mode='markers+text',
-            marker=dict(size=20, color='blue'),
+            marker=dict(size=20, color='#666'),
             text=str(i),
             textposition='middle center',
             textfont=dict(color='white', size=10),
@@ -185,7 +188,7 @@ def get_table_predictions():
     mae_mlp = df[df['Modelo'] == 'Multi Layer Perceptron']['Diferença'].abs().mean()
 
     col1, col2, col3 = st.columns([5,1,2])
-    col1.markdown("Média dos erros absolutos das últimas previsões dos modelos para o valor de fechaento do Petróleo Brent")
+    col1.markdown("Média dos erros absolutos das últimas previsões dos modelos para o valor de fechamento do Petróleo Brent")
     col3.metric(":blue-background[MAE Meta-Modelo]", f"U$D {mae_meta:.2f}")
 
     st.markdown("<div style='margin-bottom: 20px'></div>", unsafe_allow_html=True)
