@@ -1,46 +1,28 @@
 version: "3.1"
 services:
-#  schedule:
-#    build:
-#      context: ../.
-#      dockerfile: docker/python-image
-#    container_name: uxer-schedule
-#    volumes:
-#      - ../logs:/app/logs
-#    command: sh -c "poetry run python main.py schedule" 
-  db:
-    image: postgres:latest
-    restart: always
-    environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-    volumes:
-      - ../database:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    networks:
-      - f4-brent-oil
 
-  nifi:
-    image: apache/nifi:latest
-    ports:
-      - 8443:8443
-    environment:
-      - NIFI_WEB_HTTP_PORT=8443
-      #- NIFI_SENSITIVE_PROPS_KEY=${NIFI_SENSITIVE_PROPS_KEY}
-      #- SINGLE_USER_CREDENTIALS_USERNAME=${NIFI_USERNAME}
-      #- SINGLE_USER_CREDENTIALS_PASSWORD=${NIFI_PASSWORD}
-    volumes:
-      - ../nifi/database_repository:/opt/nifi/nifi-current/database_repository
-      - ../nifi/flowfile_repository:/opt/nifi/nifi-current/flowfile_repository
-      - ../nifi/content_repository:/opt/nifi/nifi-current/content_repository
-      - ../nifi/provenance_repository:/opt/nifi/nifi-current/provenance_repository
-      - ../nifi/state:/opt/nifi/nifi-current/state
-      - ../nifi/logs:/opt/nifi/nifi-current/logs
-      - ../nifi/drivers:/opt/nifi/drivers
+  tcf4-back:
+    build:
+      context: ../.
+      dockerfile: docker/python-image
+    container_name: tcf4-back-brent-oil
     networks:
-      - f4-brent-oil
-    command: sh -c "nifi.sh run"
+      - zfab
+    command: sh -c "poetry run python main.py"
+
+tcf4-front:
+    build:
+      context: ../.
+      dockerfile: docker/python-image
+    container_name: tcf4-front-brent-oil
+    ports:
+      - 8501
+    networks:
+      - zfab
+    command: sh -c "streamlit run streamlit.py --server.port=8501 --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false --server.baseUrlPath=tcf4"
+
+
 networks:
-  f4-brent-oil:
-    driver: bridge
+  zfab:
+    name: zfab-network
+    external: true

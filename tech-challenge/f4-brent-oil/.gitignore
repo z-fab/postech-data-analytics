@@ -2,4 +2,5 @@ nifi/*
 database/*
 !/**/.gitkeep
 poetry.lock
-
+database
+.env

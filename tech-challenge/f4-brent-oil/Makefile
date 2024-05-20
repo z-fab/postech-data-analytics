@@ -1,26 +1,26 @@
-include .env
+include app/.env
 
 up:
 	@echo 'Iniciando Docker e subindo serviços...'
-	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file .env up
+	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env up
 
 up_d:
 	@echo 'Iniciando Docker e subindo serviços...'
-	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file .env up -d
+	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env up -d
 
 rebuild:
 	@echo 'Fazendo build do Docker compose...'
-	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file .env build
-	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file .env up
+	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env build
+	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env up
 
 build:
 	@echo 'Fazendo build do Docker compose...'
-	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file .env build
+	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env build
 
 stop:
 	@echo 'Parando serviços Docker...'
-	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file .env stop
+	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env stop
 
 logs:
 	@echo 'Logs Docker...'
-	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file .env logs --tail=100
+	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env logs --tail=100

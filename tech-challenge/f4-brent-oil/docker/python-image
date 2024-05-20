@@ -10,16 +10,18 @@ RUN date
 RUN apt-get update && apt-get install -y \
     curl \
     build-essential \
+    libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
 COPY pyproject.toml poetry.lock* ./
-COPY logs/ ./logs
 
 RUN curl -sSL https://install.python-poetry.org | python -
 RUN poetry config virtualenvs.create false
 RUN poetry install --no-dev
 
 COPY app/ ./
-COPY .env ./
+
+
+
 
 
