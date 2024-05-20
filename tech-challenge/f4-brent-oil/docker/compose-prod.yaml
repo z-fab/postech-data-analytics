@@ -8,7 +8,7 @@ services:
     container_name: tcf4-back-brent-oil
     networks:
       - zfab
-    command: sh -c "poetry run python main.py"
+    command: sh -c "poetry run python update.py"
 
 tcf4-front:
     build:
