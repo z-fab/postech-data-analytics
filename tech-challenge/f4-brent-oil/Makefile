@@ -10,12 +10,12 @@ up_d:
 
 rebuild:
 	@echo 'Fazendo build do Docker compose...'
-	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env build
+	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env build --no-cache
 	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env up
 
 build:
 	@echo 'Fazendo build do Docker compose...'
-	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env build
+	docker compose -p ${DOCKER_PROJECT} -f ${DOCKER_FILE} --env-file app/.env build --no-cache
 
 stop:
 	@echo 'Parando serviços Docker...'

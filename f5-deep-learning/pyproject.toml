@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "f5-deep-learning"
+version = "0.1.0"
+description = ""
+authors = ["Fabricio Zillig <fabricio.zillig@gmail.com>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.2.2"
+openpyxl = "^3.1.2"
+scikit-learn = "^1.4.2"
+seaborn = "^0.13.2"
+torch = "^2.3.0"
+torchvision = "^0.18.0"
+opencv-python = "^4.9.0.80"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.29.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
