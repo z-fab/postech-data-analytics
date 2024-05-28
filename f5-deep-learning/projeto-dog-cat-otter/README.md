@@ -1,4 +1,4 @@
-# Projeto Paralelo - Fase 5 
+# Classificador DCO - Fase 5 
 
 _Este projeto paralelo foi construido de forma independente para colocar em prática assuntos vistos na Fase 5 da Postech._
 
