@@ -1,0 +1,14 @@
+FROM python:3.12-slim
+
+ENV TZ="America/Sao_Paulo"
+
+WORKDIR /app
+
+COPY app/ .
+COPY model/ /app/model
+
+# Instala as dependências do Python
+RUN pip install --no-cache-dir pillow torch torchvision streamlit numpy joblib xgboost
+
+# Expõe a porta usada pelo Streamlit
+EXPOSE 8501
