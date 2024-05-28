@@ -12,6 +12,8 @@ Este repositório contém exercícios e projetos realizados durante a Pós-Gradu
 
 - **Previsão Petróleo Brent** -> Criação de Análise e Modelo para previsão do valor de fechamento do Petróleo Brent. [tech-challenge/f4-brent-oil](tech-challenge/f4-brent-oil)
 
+- **Classificador DCO** -> Criação de classificador de imagens para identificar se o animal é um Cachorro, Gato ou Lontra. [f5-deep-learning/projeto-dog-cat-otter](f5-deep-learning/projeto-dog-cat-otter)
+
 ## Pastas
 
 Descrição e acesso rápido ao conteúdo do repositório
@@ -35,6 +37,10 @@ A pasta `f3-big-data` contém todos os códigos e notebooks criados durante os m
 #### Códigos Fase 4 - Deploy ([f4-data-viz-production-models](/f4-data-viz-production-models))
 
 A pasta `f4-data-viz-production-models` contém todos os códigos e notebooks criados durante os módulos da Fase 4 do curso. O foco da fase 4 é a visualização de dados e deploy de modelos.
+
+#### Códigos Fase 4 - Deploy ([f5-deep-learning](/f5-deep-learning))
+
+A pasta `f5-deep-learning` contém todos os códigos e notebooks criados durante os módulos da Fase 5 do curso. O foco da fase 5 são os modelos de Deep Learning e Redes Neurais.
 
 #### Aulas Ao Vivo ([lives](/lives))
 
