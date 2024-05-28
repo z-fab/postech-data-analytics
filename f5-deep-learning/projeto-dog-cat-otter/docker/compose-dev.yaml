@@ -1,0 +1,10 @@
+services:
+
+  f5-cdo:
+    build:
+      context: ../.
+      dockerfile: docker/streamlit-image
+    container_name: f5-cdo
+    command: sh -c "streamlit run main.py"
+    ports:
+      - "8501:8501"

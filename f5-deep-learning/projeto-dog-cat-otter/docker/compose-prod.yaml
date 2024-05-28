@@ -1,0 +1,28 @@
+version: "3.1"
+services:
+
+  tcf4-back:
+    build:
+      context: ../.
+      dockerfile: docker/python-image
+    container_name: tcf4-back-brent-oil
+    networks:
+      - zfab
+    command: sh -c "poetry run python update.py"
+
+tcf4-front:
+    build:
+      context: ../.
+      dockerfile: docker/python-image
+    container_name: tcf4-front-brent-oil
+    ports:
+      - 8501
+    networks:
+      - zfab
+    command: sh -c "streamlit run streamlit.py --server.port=8501 --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false --server.baseUrlPath=tcf4"
+
+
+networks:
+  zfab:
+    name: zfab-network
+    external: true
