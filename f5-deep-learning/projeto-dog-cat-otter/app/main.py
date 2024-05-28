@@ -22,7 +22,7 @@ model_xgb = joblib.load('model/model_xgb.joblib')
 mobilenet = torch.load('model/mobilenet.pth').to(DEVICE)
 
 
-st.set_page_config(page_title='Classificador de imagens', layout='centered')
+st.set_page_config(page_title='Classificador de imagens', layout='centered', page_icon=f'{random.choice(["😺", "🐶", "🦦"])}')
 
 def generate_animal_prediction(animal, percent):
     templates = [

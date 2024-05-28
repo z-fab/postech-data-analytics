@@ -1,11 +1,11 @@
 version: "3.1"
 services:
 
-  f5-cdo:
+  f5-dco:
     build:
       context: ../.
       dockerfile: docker/streamlit-image
-    container_name: f5-cdo
+    container_name: f5-dco
     networks:
       - zfab
     command: sh -c "streamlit run main.py --server.port=8501 --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false --server.baseUrlPath=dco"

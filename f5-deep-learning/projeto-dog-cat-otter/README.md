@@ -9,7 +9,7 @@ Para este projeto, com o objetivo de colocar em prática os conceitos de CNN e T
 
 ## Resultado:
 
-> Classificador Online: [https://postech.zfab.me/cdo](https://postech.zfab.me/cdo)
+> Classificador Online: [https://postech.zfab.me/dco](https://postech.zfab.me/dco)
 
 
 Este classificador de imagens combina de maneira inteligente técnicas de deep learning e modelos tradicionais de machine learning. A arquitetura utiliza uma rede neural convolucional (CNN) pré-treinada, a MobileNet V3, para extrair características das imagens, seguida por um modelo XGBoost treinado para classificar essas características.
