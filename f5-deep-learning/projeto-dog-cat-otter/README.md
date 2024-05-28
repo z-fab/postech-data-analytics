@@ -4,7 +4,7 @@ _Este projeto paralelo foi construido de forma independente para colocar em prá
 
 ### Contexto
 
-Para este projeto, com o objetivo de colocar em prática os conceitos de CNN e Transfer Learning foi desenvolvido um classificador de imagens que identifica se a imagem contém um gato, um cachorro ou uma lontra. 
+Com o objetivo de colocar em prática os conceitos de CNN e Transfer Learning, neste projeto foi desenvolvido um classificador de imagens que identifica se a imagem contém um gato, um cachorro ou uma lontra. 
 
 
 ## Resultado:
