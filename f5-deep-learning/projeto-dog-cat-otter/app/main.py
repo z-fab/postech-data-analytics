@@ -147,7 +147,9 @@ with classifier:
 with explanation:
     st.markdown("""
 
-        Desenvolvido por Fabricio Zillig, este classificador de imagens combina de maneira inteligente técnicas de deep learning e modelos tradicionais de machine learning. A arquitetura utiliza uma rede neural convolucional (CNN) pré-treinada, a MobileNet V3, para extrair características das imagens, seguida por um modelo XGBoost treinado para classificar essas características.
+        Este projeto foi construido por [Fabricio Zillig](https://www.linkedin.com/in/fazillig/), de forma independente, para colocar em prática assuntos vistos na disciplina de Deep Learning da pós graduação em Data Analytics da FIAP.
+        
+        Este classificador de imagens combina de maneira inteligente técnicas de deep learning e modelos tradicionais de machine learning. A arquitetura utiliza uma rede neural convolucional (CNN) pré-treinada, a MobileNet V3, para extrair características das imagens, seguida por um modelo XGBoost treinado para classificar essas características.
 
         #### Extração de Features com MobileNet V3
         Em vez de treinar uma CNN do zero, utilizamos a MobileNet V3, conhecida por sua eficiência e precisão em tarefas de classificação de imagens. Adaptamos essa rede para retornar um vetor de 512 features, extraindo assim as características mais importantes de cada imagem.
@@ -165,6 +167,6 @@ with explanation:
         A combinação de deep learning com modelos tradicionais de machine learning, como o XGBoost, mostra que uma pipeline 100% baseada em deep learning não é sempre necessária. Utilizar um modelo de boosting para a classificação final permitiu alcançar uma acurácia notável de 97% nos testes.
 
         ---
-        Este projeto foi desenvolvido por Fabricio Zillig e o código completo está disponível no GitHub
+        Este projeto foi desenvolvido por Fabricio Zillig e o código completo está disponível no [GitHub](https://github.com/z-fab/postech-data-analytics/tree/master/f5-deep-learning/projeto-dog-cat-otter)
 
     """)
