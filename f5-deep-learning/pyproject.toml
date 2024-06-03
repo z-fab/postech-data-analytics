@@ -20,6 +20,8 @@ nltk = "^3.8.1"
 wordcloud = "^1.9.3"
 xgboost = "^2.0.3"
 streamlit = "^1.35.0"
+torchtext = "^0.18.0"
+minisom = "^2.3.2"
 
 
 [tool.poetry.group.dev.dependencies]
