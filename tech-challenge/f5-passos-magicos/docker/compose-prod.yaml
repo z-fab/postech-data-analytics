@@ -1,0 +1,17 @@
+services:
+
+  tcf5-front:
+    build:
+      context: ../.
+      dockerfile: docker/python-image
+    container_name: tcf5-front-passos
+    ports:
+      - 8501
+    networks:
+      - zfab
+    command: sh -c "spacy download pt_core_news_sm && streamlit run streamlit.py --server.port=8501 --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false --server.baseUrlPath=tcf5"
+
+networks:
+  zfab:
+    name: zfab-network
+    external: true
