@@ -82,7 +82,7 @@ def header():
     st.markdown(
         """
         <p style="font-size: 14px; color: #AAA; ">
-        Projeto criado por <b>Fabricio Zillig</b>. O código fonte está disponível no <a style='color: #999' target='_blank' href='https://github.com/z-fab/postech-data-analytics/tree/master/tech-challenge/f4-passos-magicos'>GitHub</a>
+        Projeto criado por <b>Fabricio Zillig</b>. O código fonte está disponível no <a style='color: #999' target='_blank' href='https://github.com/z-fab/postech-data-analytics/tree/master/tech-challenge/f5-passos-magicos'>GitHub</a>
         </p>""",
         unsafe_allow_html=True,
     )
