@@ -14,6 +14,8 @@ Este repositório contém exercícios e projetos realizados durante a Pós-Gradu
 
 - **Classificador DCO** -> Criação de classificador de imagens para identificar se o animal é um Cachorro, Gato ou Lontra. [f5-deep-learning/projeto-dog-cat-otter](f5-deep-learning/projeto-dog-cat-otter)
 
+- **Previsão de Presença Estudantil** -> Criação de Modelo para previsão de presença estudantil em aula. [tech-challenge/f5-passos-magicos](tech-challenge/f5-passos-magicos)
+
 ## Pastas
 
 Descrição e acesso rápido ao conteúdo do repositório
